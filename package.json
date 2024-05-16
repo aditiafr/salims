@@ -1,0 +1,25 @@
+{
+  "name": "salims",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 5000",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@ant-design/icons": "^5.3.7",
+    "@phosphor-icons/react": "^2.1.5",
+    "antd": "^5.17.0",
+    "next": "13.5.6",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-pro-sidebar": "^1.1.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10",
+    "postcss": "^8",
+    "tailwindcss": "^3"
+  }
+}
