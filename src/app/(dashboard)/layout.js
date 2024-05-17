@@ -6,7 +6,7 @@ import MySidebar from "@/components/Dashboard/MySidebar";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "SALIMS",
+  title: "Dashboard",
   description: "Dashboard App SALIMS",
 };
 

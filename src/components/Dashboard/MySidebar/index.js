@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import {
   FileOutlined,
+  HomeOutlined,
   LayoutOutlined,
   MenuFoldOutlined,
   MenuUnfoldOutlined,
@@ -32,16 +33,18 @@ const MySidebar = ({ children }) => {
   const items = [
     getItem("dashboard", "1", <PieChartOutlined />, "/dashboard"),
     getItem("Building", "2", <LayoutOutlined />, "/master/building"),
-    getItem("User", "sub1", <UserOutlined />, null, [
-      getItem("Tom", "3", null, "/user/tom"),
-      getItem("Bill", "4", null, "/user/bill"),
-      getItem("Alex", "5", null, "/user/alex"),
-    ]),
-    getItem("Team", "sub2", <TeamOutlined />, null, [
-      getItem("Team 1", "6", null, "/team/team1"),
-      getItem("Team 2", "8", null, "/team/team2"),
-    ]),
-    getItem("Files", "9", <FileOutlined />, "/files"),
+    getItem("Warehouse", "3", <HomeOutlined />, "/master/warehouse"),
+    getItem("Sample Storage Location", "4", <FileOutlined />, "/master/samplestoragelocation"),
+    // getItem("User", "sub1", <UserOutlined />, null, [
+    //   getItem("Tom", "3", null, "/user/tom"),
+    //   getItem("Bill", "4", null, "/user/bill"),
+    //   getItem("Alex", "5", null, "/user/alex"),
+    // ]),
+    // getItem("Team", "sub2", <TeamOutlined />, null, [
+    //   getItem("Team 1", "6", null, "/team/team1"),
+    //   getItem("Team 2", "8", null, "/team/team2"),
+    // ]),
+    // getItem("Files", "9", <FileOutlined />, "/files"),
   ];
 
   return (

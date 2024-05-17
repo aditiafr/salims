@@ -22,7 +22,7 @@ const Page = () => {
   return (
     <>
       <div className="flex justify-between items-center px-2 pb-4">
-        <HeaderTitle title="BUILDING" subtitle="form data a building" />
+        <HeaderTitle title="WAREHOUSE" subtitle="form data a warehouse" />
       </div>
       <div className="w-full bg-white rounded-lg">
         <Form

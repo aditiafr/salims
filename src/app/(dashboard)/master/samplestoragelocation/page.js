@@ -3,9 +3,9 @@
 import { Button, Input, Space, Table } from "antd";
 import Link from "next/link";
 import React from "react";
-import EditBuilding from "./action/edit";
-import DeleteBuilding from "./action/delete";
 import HeaderTitle from "@/components/Dashboard/Global/HeaderTitle";
+import EditSSL from "./action/edit";
+import DeleteSSL from "./action/delete";
 const { Search } = Input;
 
 const onSearch = (value, _e, info) => console.log(info?.source, value);
@@ -77,8 +77,8 @@ const columns = [
     width: 100,
     render: (_, record) => (
       <Space>
-        <EditBuilding />
-        <DeleteBuilding />
+        <EditSSL />
+        <DeleteSSL />
       </Space>
     ),
   },
@@ -138,9 +138,12 @@ const Page = () => {
   return (
     <>
       <div className="flex justify-between items-center px-2 pb-4">
-        <HeaderTitle title="BUILDING" subtitle="All data building" />
+        <HeaderTitle
+          title="SAMPLE STORAGE LOCATION"
+          subtitle="All data sample storage location"
+        />
         <div>
-          <Link href="/master/building/form">
+          <Link href="/master/samplestoragelocation/form">
             <Button type="primary">+ Add New</Button>
           </Link>
         </div>

@@ -1,11 +1,13 @@
 "use client";
 
+import HeaderTitle from "@/components/Dashboard/Global/HeaderTitle";
 import { Button, Input, Space, Table } from "antd";
 import Link from "next/link";
 import React from "react";
-import EditBuilding from "./action/edit";
-import DeleteBuilding from "./action/delete";
-import HeaderTitle from "@/components/Dashboard/Global/HeaderTitle";
+import EditWarehouse from "./action/edit";
+import DeleteWarehouse from "./action/delete";
+// import EditBuilding from "./action/edit";
+// import DeleteBuilding from "./action/delete";
 const { Search } = Input;
 
 const onSearch = (value, _e, info) => console.log(info?.source, value);
@@ -77,8 +79,8 @@ const columns = [
     width: 100,
     render: (_, record) => (
       <Space>
-        <EditBuilding />
-        <DeleteBuilding />
+        <EditWarehouse />
+        <DeleteWarehouse />
       </Space>
     ),
   },
@@ -132,15 +134,27 @@ const data = [
     Fax: "17829",
     Desciption: "Test Data",
   },
+  {
+    key: "5",
+    Code: "BLD05",
+    Address: "Jl. Jendral Sudirman",
+    ZIPCode: "ZIP01",
+    City: "Jakarta Pusat",
+    Country: "Indonesia",
+    Phone: "0812345678",
+    Contact: "Slamet",
+    Fax: "17829",
+    Desciption: "Test Data",
+  },
 ];
 
 const Page = () => {
   return (
     <>
       <div className="flex justify-between items-center px-2 pb-4">
-        <HeaderTitle title="BUILDING" subtitle="All data building" />
+        <HeaderTitle title="WAREHOUSE" subtitle="All data warehouse" />
         <div>
-          <Link href="/master/building/form">
+          <Link href="/master/warehouse/form">
             <Button type="primary">+ Add New</Button>
           </Link>
         </div>
