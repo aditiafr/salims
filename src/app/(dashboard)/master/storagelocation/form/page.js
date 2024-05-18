@@ -1,16 +1,10 @@
-import ButtonEdit from "@/components/Dashboard/Global/Button/ButtonEdit";
+"use client";
+
+import { Form, Input, Col, Row } from "antd";
+import ButtonSubmit from "@/components/Dashboard/Global/Button/ButtonSubmit";
 import HeaderTitle from "@/components/Dashboard/Global/HeaderTitle";
-import { EditFilled } from "@ant-design/icons";
-import { Button, Col, Form, Input, Modal, Row, Tooltip } from "antd";
-import React, { useState } from "react";
 
-const EditSSL = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const showModal = () => {
-    setIsModalOpen(true);
-  };
-
+const Page = () => {
   const [form] = Form.useForm();
 
   const onFinish = (values) => {
@@ -22,34 +16,17 @@ const EditSSL = () => {
 
   const onReset = () => {
     form.resetFields();
-    setIsModalOpen(false);
   };
 
   return (
     <>
-      <Tooltip title="Edit">
-        <Button icon={<EditFilled />} type="text" onClick={showModal} />
-      </Tooltip>
-
-      <Modal
-        title={
-          <HeaderTitle
-            title="SAMPLE STORAGE LOCATION"
-            subtitle="Edit data a sample storage location"
-          />
-        }
-        centered
-        open={isModalOpen}
-        closable={false}
-        width={1000}
-        styles={{
-          body: {
-            maxHeight: "70vh",
-            overflow: "auto",
-          },
-        }}
-        footer={false}
-      >
+      <div className="flex justify-between items-center px-2 pb-4">
+        <HeaderTitle
+          title="STORAGE LOCATION"
+          subtitle="form data a storage location"
+        />
+      </div>
+      <div className="w-full bg-white rounded-lg">
         <Form
           name="basic"
           layout="vertical"
@@ -58,7 +35,7 @@ const EditSSL = () => {
           autoComplete="off"
           form={form}
         >
-          <Row gutter={30} style={{ margin: "0px" }}>
+          <Row gutter={30} style={{ padding: "28px" }}>
             <Col xs={24} sm={12}>
               <Form.Item
                 label="Building"
@@ -73,7 +50,7 @@ const EditSSL = () => {
                 <Input maxLength={20} />
               </Form.Item>
             </Col>
-
+            
             <Col xs={24} sm={12}>
               <Form.Item
                 label="Code"
@@ -110,11 +87,11 @@ const EditSSL = () => {
               </Form.Item>
             </Col>
           </Row>
-          <ButtonEdit onReset={onReset} />
+          <ButtonSubmit onReset={onReset} />
         </Form>
-      </Modal>
+      </div>
     </>
   );
 };
 
-export default EditSSL;
+export default Page;

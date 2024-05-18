@@ -35,6 +35,7 @@ const MySidebar = ({ children }) => {
     getItem("Building", "2", <LayoutOutlined />, "/master/building"),
     getItem("Warehouse", "3", <HomeOutlined />, "/master/warehouse"),
     getItem("Sample Storage Location", "4", <FileOutlined />, "/master/samplestoragelocation"),
+    getItem("Storage Location", "5", <FileOutlined />, "/master/storagelocation"),
     // getItem("User", "sub1", <UserOutlined />, null, [
     //   getItem("Tom", "3", null, "/user/tom"),
     //   getItem("Bill", "4", null, "/user/bill"),

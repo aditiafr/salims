@@ -1,7 +1,6 @@
 "use client";
 
-import { createContext, useContext, useMemo } from "react";
-import { Button, Form, Input, Col, Row } from "antd";
+import { Form, Input, Col, Row } from "antd";
 import ButtonSubmit from "@/components/Dashboard/Global/Button/ButtonSubmit";
 import HeaderTitle from "@/components/Dashboard/Global/HeaderTitle";
 
@@ -39,6 +38,21 @@ const Page = () => {
           <Row gutter={30} style={{ padding: "28px" }}>
             <Col xs={24} sm={12}>
               <Form.Item
+                label="Building"
+                name="Building"
+                rules={[
+                  {
+                    required: true,
+                    message: "Please input your Building!",
+                  },
+                ]}
+              >
+                <Input maxLength={20} />
+              </Form.Item>
+            </Col>
+            
+            <Col xs={24} sm={12}>
+              <Form.Item
                 label="Code"
                 name="Code"
                 rules={[
@@ -60,111 +74,6 @@ const Page = () => {
                   {
                     required: true,
                     message: "Please input your Name!",
-                  },
-                ]}
-              >
-                <Input />
-              </Form.Item>
-            </Col>
-
-            <Col xs={24} sm={12}>
-              <Form.Item
-                label="Address"
-                name="Address"
-                rules={[
-                  {
-                    required: true,
-                    message: "Please input your Address!",
-                  },
-                ]}
-              >
-                <Input.TextArea />
-              </Form.Item>
-            </Col>
-
-            <Col xs={24} sm={12}>
-              <Form.Item
-                label="ZipCode"
-                name="ZipCode"
-                rules={[
-                  {
-                    required: true,
-                    message: "Please input your ZipCode!",
-                  },
-                ]}
-              >
-                <Input />
-              </Form.Item>
-            </Col>
-
-            <Col xs={24} sm={12}>
-              <Form.Item
-                label="City"
-                name="City"
-                rules={[
-                  {
-                    required: true,
-                    message: "Please input your City!",
-                  },
-                ]}
-              >
-                <Input />
-              </Form.Item>
-            </Col>
-
-            <Col xs={24} sm={12}>
-              <Form.Item
-                label="Country"
-                name="Country"
-                rules={[
-                  {
-                    required: true,
-                    message: "Please input your Country!",
-                  },
-                ]}
-              >
-                <Input />
-              </Form.Item>
-            </Col>
-
-            <Col xs={24} sm={12}>
-              <Form.Item
-                label="Phone"
-                name="Phone"
-                rules={[
-                  {
-                    required: true,
-                    message: "Please input your Phone!",
-                  },
-                ]}
-              >
-                <Input />
-              </Form.Item>
-            </Col>
-
-            <Col xs={24} sm={12}>
-              <Form.Item
-                label="Contact"
-                name="Contact"
-                rules={[
-                  {
-                    required: true,
-                    message: "Please input your Contact!",
-                  },
-                ]}
-              >
-                <Input />
-              </Form.Item>
-            </Col>
-
-            <Col xs={24} sm={12}>
-              <Form.Item
-                label="Fax"
-                name="Fax"
-                rules={[
-                  {
-                    required: true,
-                    message: "Please input your Fax!",
                   },
                 ]}
               >

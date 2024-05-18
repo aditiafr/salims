@@ -3,10 +3,9 @@
 import { Button, Input, Space, Table } from "antd";
 import Link from "next/link";
 import React from "react";
+// import EditBuilding from "./action/edit";
+// import DeleteBuilding from "./action/delete";
 import HeaderTitle from "@/components/Dashboard/Global/HeaderTitle";
-import EditSSL from "./action/edit";
-import DeleteSSL from "./action/delete";
-import { Building } from "@phosphor-icons/react";
 const { Search } = Input;
 
 const onSearch = (value, _e, info) => console.log(info?.source, value);
@@ -19,9 +18,9 @@ const columns = [
     width: 80,
   },
   {
-    title: "Building",
-    dataIndex: "Building",
-    key: "Building",
+    title: "Warehouse",
+    dataIndex: "Warehouse",
+    key: "Warehouse",
     width: 150,
   },
   {
@@ -48,8 +47,8 @@ const columns = [
     width: 100,
     render: (_, record) => (
       <Space>
-        <EditSSL />
-        <DeleteSSL />
+        {/* <EditBuilding />
+        <DeleteBuilding /> */}
       </Space>
     ),
   },
@@ -57,7 +56,7 @@ const columns = [
 const data = [
   {
     key: "1",
-    Building: "BLD01",
+    Warehouse: "WH01",
     Code: "001",
     Name: "Sudirman",
     Desciption: "Test Data",
@@ -68,12 +67,9 @@ const Page = () => {
   return (
     <>
       <div className="flex justify-between items-center px-2 pb-4">
-        <HeaderTitle
-          title="SAMPLE STORAGE LOCATION"
-          subtitle="All data sample storage location"
-        />
+        <HeaderTitle title="STORAGE LOCATION" subtitle="All data storage location" />
         <div>
-          <Link href="/master/samplestoragelocation/form">
+          <Link href="/master/storagelocation/form">
             <Button type="primary">+ Add New</Button>
           </Link>
         </div>

@@ -16,6 +16,7 @@ const ButtonSubmit = ({ onReset }) => {
         padding: "20px",
         boxShadow: "0px -4px 4px #00000016",
         backgroundColor: "#FFFFFF",
+        borderRadius: "0 0 8px 8px"
       }}
     >
       <Button type="primary" danger htmlType="button" onClick={onReset}>
