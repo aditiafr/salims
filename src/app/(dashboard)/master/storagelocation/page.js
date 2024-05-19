@@ -3,9 +3,9 @@
 import { Button, Input, Space, Table } from "antd";
 import Link from "next/link";
 import React from "react";
-// import EditBuilding from "./action/edit";
-// import DeleteBuilding from "./action/delete";
 import HeaderTitle from "@/components/Dashboard/Global/HeaderTitle";
+import EditStorageLocation from "./action/edit";
+import DeleteStorageLocation from "./action/delete";
 const { Search } = Input;
 
 const onSearch = (value, _e, info) => console.log(info?.source, value);
@@ -47,8 +47,8 @@ const columns = [
     width: 100,
     render: (_, record) => (
       <Space>
-        {/* <EditBuilding />
-        <DeleteBuilding /> */}
+        <EditStorageLocation />
+        <DeleteStorageLocation />
       </Space>
     ),
   },

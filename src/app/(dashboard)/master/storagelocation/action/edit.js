@@ -4,7 +4,7 @@ import { EditFilled } from "@ant-design/icons";
 import { Button, Col, Form, Input, Modal, Row, Tooltip } from "antd";
 import React, { useState } from "react";
 
-const EditSSL = () => {
+const EditStorageLocation = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const showModal = () => {
@@ -34,8 +34,8 @@ const EditSSL = () => {
       <Modal
         title={
           <HeaderTitle
-            title="SAMPLE STORAGE LOCATION"
-            subtitle="Edit data a sample storage location"
+            title="STORAGE LOCATION"
+            subtitle="Edit data a storage location"
           />
         }
         centered
@@ -58,7 +58,7 @@ const EditSSL = () => {
           autoComplete="off"
           form={form}
         >
-          <Row gutter={30} style={{ margin: "0px", paddingTop: "14px" }}>
+          <Row gutter={30} style={{ margin: "0px", paddingTop:"14px" }}>
             <Col xs={24} sm={12}>
               <Form.Item
                 label="Building"
@@ -117,4 +117,4 @@ const EditSSL = () => {
   );
 };
 
-export default EditSSL;
+export default EditStorageLocation;

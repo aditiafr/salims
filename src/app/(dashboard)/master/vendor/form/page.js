@@ -1,16 +1,11 @@
-import ButtonEdit from "@/components/Dashboard/Global/Button/ButtonEdit";
+"use client";
+
+import { createContext, useContext, useMemo } from "react";
+import { Button, Form, Input, Col, Row } from "antd";
+import ButtonSubmit from "@/components/Dashboard/Global/Button/ButtonSubmit";
 import HeaderTitle from "@/components/Dashboard/Global/HeaderTitle";
-import { EditFilled } from "@ant-design/icons";
-import { Button, Col, Form, Input, Modal, Row, Tooltip } from "antd";
-import React, { useState } from "react";
 
-const EditWarehouse = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const showModal = () => {
-    setIsModalOpen(true);
-  };
-
+const Page = () => {
   const [form] = Form.useForm();
 
   const onFinish = (values) => {
@@ -22,31 +17,14 @@ const EditWarehouse = () => {
 
   const onReset = () => {
     form.resetFields();
-    setIsModalOpen(false);
   };
 
   return (
     <>
-      <Tooltip title="Edit">
-        <Button icon={<EditFilled />} type="text" onClick={showModal} />
-      </Tooltip>
-
-      <Modal
-        title={
-          <HeaderTitle title="WAREHOUSE" subtitle="Edit data a warehouse" />
-        }
-        centered
-        open={isModalOpen}
-        closable={false}
-        width={1000}
-        styles={{
-          body: {
-            maxHeight: "70vh",
-            overflow: "auto",
-          },
-        }}
-        footer={false}
-      >
+      <div className="flex justify-between items-center px-2 pb-4">
+        <HeaderTitle title="VENDOR" subtitle="form data a vendor" />
+      </div>
+      <div className="w-full bg-white rounded-lg">
         <Form
           name="basic"
           layout="vertical"
@@ -55,19 +33,34 @@ const EditWarehouse = () => {
           autoComplete="off"
           form={form}
         >
-          <Row gutter={30} style={{ margin: "0px", paddingTop:"14px" }}>
+          <Row gutter={30} style={{ padding: "28px" }}>
             <Col xs={24} sm={12}>
               <Form.Item
-                label="Code"
-                name="Code"
+                label="Branch"
+                name="Branch"
                 rules={[
                   {
                     required: true,
-                    message: "Please input your Code!",
+                    message: "Please input your Branch!",
                   },
                 ]}
               >
-                <Input maxLength={20} />
+                <Input />
+              </Form.Item>
+            </Col>
+
+            <Col xs={24} sm={12}>
+              <Form.Item
+                label="Vendor Code"
+                name="VendorCode"
+                rules={[
+                  {
+                    required: true,
+                    message: "Please input your Vendor Code!",
+                  },
+                ]}
+              >
+                <Input />
               </Form.Item>
             </Col>
 
@@ -88,12 +81,27 @@ const EditWarehouse = () => {
 
             <Col xs={24} sm={12}>
               <Form.Item
-                label="Address"
-                name="Address"
+                label="Email  "
+                name="Email "
                 rules={[
                   {
                     required: true,
-                    message: "Please input your Address!",
+                    message: "Please input your Email !",
+                  },
+                ]}
+              >
+                <Input />
+              </Form.Item>
+            </Col>
+
+            <Col xs={24} sm={12}>
+              <Form.Item
+                label="Address 1"
+                name="Address1"
+                rules={[
+                  {
+                    required: true,
+                    message: "Please input your Address 1!",
                   },
                 ]}
               >
@@ -103,12 +111,27 @@ const EditWarehouse = () => {
 
             <Col xs={24} sm={12}>
               <Form.Item
-                label="ZipCode"
-                name="ZipCode"
+                label="Address 2"
+                name="Address2"
                 rules={[
                   {
                     required: true,
-                    message: "Please input your ZipCode!",
+                    message: "Please input your Address 2!",
+                  },
+                ]}
+              >
+                <Input.TextArea />
+              </Form.Item>
+            </Col>
+
+            <Col xs={24} sm={12}>
+              <Form.Item
+                label="ZIP Code"
+                name="ZIPCode"
+                rules={[
+                  {
+                    required: true,
+                    message: "Please input your ZIP Code!",
                   },
                 ]}
               >
@@ -148,6 +171,51 @@ const EditWarehouse = () => {
 
             <Col xs={24} sm={12}>
               <Form.Item
+                label="Fax"
+                name="Fax"
+                rules={[
+                  {
+                    required: true,
+                    message: "Please input your Fax!",
+                  },
+                ]}
+              >
+                <Input />
+              </Form.Item>
+            </Col>
+
+            <Col xs={24} sm={12}>
+              <Form.Item
+                label="Contact Person"
+                name="ContactPerson"
+                rules={[
+                  {
+                    required: true,
+                    message: "Please input your Contact Person!",
+                  },
+                ]}
+              >
+                <Input />
+              </Form.Item>
+            </Col>
+
+            <Col xs={24} sm={12}>
+              <Form.Item
+                label="Hp"
+                name="Hp"
+                rules={[
+                  {
+                    required: true,
+                    message: "Please input your Hp!",
+                  },
+                ]}
+              >
+                <Input />
+              </Form.Item>
+            </Col>
+
+            <Col xs={24} sm={12}>
+              <Form.Item
                 label="Phone"
                 name="Phone"
                 rules={[
@@ -163,12 +231,12 @@ const EditWarehouse = () => {
 
             <Col xs={24} sm={12}>
               <Form.Item
-                label="Contact"
-                name="Contact"
+                label="NPWP"
+                name="NPWP"
                 rules={[
                   {
                     required: true,
-                    message: "Please input your Contact!",
+                    message: "Please input your NPWP!",
                   },
                 ]}
               >
@@ -178,12 +246,12 @@ const EditWarehouse = () => {
 
             <Col xs={24} sm={12}>
               <Form.Item
-                label="Fax"
-                name="Fax"
+                label="Type"
+                name="Type"
                 rules={[
                   {
                     required: true,
-                    message: "Please input your Fax!",
+                    message: "Please input your Type!",
                   },
                 ]}
               >
@@ -197,11 +265,11 @@ const EditWarehouse = () => {
               </Form.Item>
             </Col>
           </Row>
-          <ButtonEdit onReset={onReset} />
+          <ButtonSubmit onReset={onReset} />
         </Form>
-      </Modal>
+      </div>
     </>
   );
 };
 
-export default EditWarehouse;
+export default Page;

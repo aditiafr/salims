@@ -13,7 +13,7 @@ const ButtonEdit = ({ onReset }) => {
         bottom: 0,
         zIndex: 1000,
         width: "100%",
-        padding: "20px",
+        padding: "8px 14px",
         backgroundColor: "#FFFFFF",
       }}
     >

@@ -53,7 +53,7 @@ const EditBuilding = () => {
           autoComplete="off"
           form={form}
         >
-          <Row gutter={30} style={{ margin: "0px" }}>
+          <Row gutter={30} style={{ margin: "0px", paddingTop:"14px" }}>
             <Col xs={24} sm={12}>
               <Form.Item
                 label="Code"
