@@ -4,7 +4,7 @@ import { EditFilled } from "@ant-design/icons";
 import { Button, Col, Form, Input, Modal, Row, Tooltip } from "antd";
 import React, { useState } from "react";
 
-const EditWarehouse = () => {
+const EditVendor = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const showModal = () => {
@@ -32,9 +32,7 @@ const EditWarehouse = () => {
       </Tooltip>
 
       <Modal
-        title={
-          <HeaderTitle title="WAREHOUSE" subtitle="Edit data a warehouse" />
-        }
+        title={<HeaderTitle title="VENDOR" subtitle="Edit data a vendor" />}
         centered
         open={isModalOpen}
         closable={false}
@@ -55,19 +53,34 @@ const EditWarehouse = () => {
           autoComplete="off"
           form={form}
         >
-          <Row gutter={30} style={{ margin: "0px", paddingTop:"14px" }}>
+          <Row gutter={30} style={{ margin: "0px", paddingTop: "14px" }}>
             <Col xs={24} sm={12}>
               <Form.Item
-                label="Code"
-                name="Code"
+                label="Branch"
+                name="Branch"
                 rules={[
                   {
                     required: true,
-                    message: "Please input your Code!",
+                    message: "Please input your Branch!",
                   },
                 ]}
               >
-                <Input maxLength={20} />
+                <Input />
+              </Form.Item>
+            </Col>
+
+            <Col xs={24} sm={12}>
+              <Form.Item
+                label="Vendor Code"
+                name="VendorCode"
+                rules={[
+                  {
+                    required: true,
+                    message: "Please input your Vendor Code!",
+                  },
+                ]}
+              >
+                <Input />
               </Form.Item>
             </Col>
 
@@ -88,12 +101,27 @@ const EditWarehouse = () => {
 
             <Col xs={24} sm={12}>
               <Form.Item
-                label="Address"
-                name="Address"
+                label="Email  "
+                name="Email "
                 rules={[
                   {
                     required: true,
-                    message: "Please input your Address!",
+                    message: "Please input your Email !",
+                  },
+                ]}
+              >
+                <Input />
+              </Form.Item>
+            </Col>
+
+            <Col xs={24} sm={12}>
+              <Form.Item
+                label="Address 1"
+                name="Address1"
+                rules={[
+                  {
+                    required: true,
+                    message: "Please input your Address 1!",
                   },
                 ]}
               >
@@ -103,12 +131,27 @@ const EditWarehouse = () => {
 
             <Col xs={24} sm={12}>
               <Form.Item
-                label="ZipCode"
-                name="ZipCode"
+                label="Address 2"
+                name="Address2"
                 rules={[
                   {
                     required: true,
-                    message: "Please input your ZipCode!",
+                    message: "Please input your Address 2!",
+                  },
+                ]}
+              >
+                <Input.TextArea />
+              </Form.Item>
+            </Col>
+
+            <Col xs={24} sm={12}>
+              <Form.Item
+                label="ZIP Code"
+                name="ZIPCode"
+                rules={[
+                  {
+                    required: true,
+                    message: "Please input your ZIP Code!",
                   },
                 ]}
               >
@@ -148,6 +191,51 @@ const EditWarehouse = () => {
 
             <Col xs={24} sm={12}>
               <Form.Item
+                label="Fax"
+                name="Fax"
+                rules={[
+                  {
+                    required: true,
+                    message: "Please input your Fax!",
+                  },
+                ]}
+              >
+                <Input />
+              </Form.Item>
+            </Col>
+
+            <Col xs={24} sm={12}>
+              <Form.Item
+                label="Contact Person"
+                name="ContactPerson"
+                rules={[
+                  {
+                    required: true,
+                    message: "Please input your Contact Person!",
+                  },
+                ]}
+              >
+                <Input />
+              </Form.Item>
+            </Col>
+
+            <Col xs={24} sm={12}>
+              <Form.Item
+                label="Hp"
+                name="Hp"
+                rules={[
+                  {
+                    required: true,
+                    message: "Please input your Hp!",
+                  },
+                ]}
+              >
+                <Input />
+              </Form.Item>
+            </Col>
+
+            <Col xs={24} sm={12}>
+              <Form.Item
                 label="Phone"
                 name="Phone"
                 rules={[
@@ -163,12 +251,12 @@ const EditWarehouse = () => {
 
             <Col xs={24} sm={12}>
               <Form.Item
-                label="Contact"
-                name="Contact"
+                label="NPWP"
+                name="NPWP"
                 rules={[
                   {
                     required: true,
-                    message: "Please input your Contact!",
+                    message: "Please input your NPWP!",
                   },
                 ]}
               >
@@ -178,12 +266,12 @@ const EditWarehouse = () => {
 
             <Col xs={24} sm={12}>
               <Form.Item
-                label="Fax"
-                name="Fax"
+                label="Type"
+                name="Type"
                 rules={[
                   {
                     required: true,
-                    message: "Please input your Fax!",
+                    message: "Please input your Type!",
                   },
                 ]}
               >
@@ -204,4 +292,4 @@ const EditWarehouse = () => {
   );
 };
 
-export default EditWarehouse;
+export default EditVendor;
