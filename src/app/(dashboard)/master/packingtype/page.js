@@ -28,6 +28,9 @@ const columns = [
     dataIndex: "Desciption",
     key: "Desciption",
     width: 200,
+    render: (text) => {
+      return text ? text : "N/A";
+    },
   },
   {
     title: "Suspended",
@@ -73,7 +76,7 @@ const data = [
     key: 3,
     Code: "P6",
     Name: "Can",
-    Desciption: "Can",
+    Desciption: null,
     Suspended: false,
   },
 ];

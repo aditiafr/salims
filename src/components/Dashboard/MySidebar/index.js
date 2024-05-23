@@ -15,6 +15,7 @@ import {
   ToolOutlined,
   InboxOutlined, 
   ShoppingOutlined,
+  ProductOutlined,
 } from "@ant-design/icons";
 import { Button, Layout, Menu, theme } from "antd";
 const { Header, Sider, Content, Footer } = Layout;
@@ -45,6 +46,7 @@ const MySidebar = ({ children }) => {
     getItem("Equipment Type", "8", <ToolOutlined />, "/master/equipmenttype"),
     getItem("Packing Type", "9", <InboxOutlined />, "/master/packingtype"),
     getItem("Product Category", "10", <ShoppingOutlined />, "/master/productcategory"),
+    getItem("Product Type", "11", <ProductOutlined />, "/master/producttype"),
     // getItem("User", "sub1", <UserOutlined />, null, [
     //   getItem("Tom", "3", null, "/user/tom"),
     //   getItem("Bill", "4", null, "/user/bill"),

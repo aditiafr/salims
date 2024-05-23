@@ -4,8 +4,9 @@ import { Button, Input, Space, Table } from "antd";
 import Link from "next/link";
 import React from "react";
 import HeaderTitle from "@/components/Dashboard/Global/HeaderTitle";
-import EditProductCategory from "./action/edit";
-import DeleteproductCategorys from "./action/delete";
+import EditProductType from "./action/edit";
+import DeleteProductType from "./action/delete";
+import { Code } from "@phosphor-icons/react";
 const { Search } = Input;
 
 const onSearch = (value, _e, info) => console.log(info?.source, value);
@@ -51,8 +52,8 @@ const columns = [
     width: 100,
     render: (_, record) => (
       <Space>
-        <EditProductCategory />
-        <DeleteproductCategorys name={record.Name} />
+        <EditProductType />
+        <DeleteProductType name={record.Name} />
       </Space>
     ),
   },
@@ -60,24 +61,24 @@ const columns = [
 const data = [
   {
     key: 1,
-    Code: "C02",
-    Name: "Liquid",
-    Desciption: "A product that is in liquid form",
+    Code : "02",
+    Name: "Reagent",
+    Desciption: null,
     Suspended: false,
   },
   {
     key: 2,
-    Code: "C03",
-    Name: "Solid",
-    Desciption: "A product that is in solid form",
-    Suspended: true,
+    Code : "03",
+    Name: "Consumable",
+    Desciption: "Product that can be used only once",
+    Suspended: false,
   },
   {
     key: 3,
-    Code: "C04",
-    Name: "Gas",
-    Desciption: null,
-    Suspended: false,
+    Code : "04",
+    Name: "Equipment",
+    Desciption: "Product that can be used multiple times",
+    Suspended: true,
   },
 ];
 
@@ -86,11 +87,11 @@ const Page = () => {
     <>
       <div className="flex justify-between items-center px-2 pb-4">
         <HeaderTitle
-          title="Product Category"
-          subtitle="All data product category"
+          title="Product Type"
+          subtitle="All data product type"
         />
         <div>
-          <Link href="/master/productcategory/form">
+          <Link href="/master/producttype/form">
             <Button type="primary">+ Add New</Button>
           </Link>
         </div>
