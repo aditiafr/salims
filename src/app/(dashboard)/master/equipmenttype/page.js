@@ -4,8 +4,8 @@ import { Button, Input, Space, Table } from "antd";
 import Link from "next/link";
 import React from "react";
 import HeaderTitle from "@/components/Dashboard/Global/HeaderTitle";
-import EditDepartment from "./action/edit";
-import DeleteDepartment from "./action/delete";
+import EditEquipmentType from "./action/edit";
+import DeleteEquipmentType from "./action/delete";
 const { Search } = Input;
 
 const onSearch = (value, _e, info) => console.log(info?.source, value);
@@ -48,8 +48,8 @@ const columns = [
     width: 100,
     render: (_, record) => (
       <Space>
-        <EditDepartment />
-        <DeleteDepartment name={record.Name} />
+        <EditEquipmentType />
+        <DeleteEquipmentType name={record.Name} />
       </Space>
     ),
   },
@@ -57,25 +57,25 @@ const columns = [
 const data = [
   {
     key: 1,
-    Code: "HR",
-    Name: "Human Resourcce",
-    Desciption: "A department that manage human resource",
+    Code: "EQP001",
+    Name: "Equipment Type 1",
+    Desciption: "Description Equipment Type 1",
     Suspended: false,
   },
   {
     key: 2,
-    Code: "IT",
-    Name: "Information Technology",
-    Desciption: "A department that manage information technology",
-    Suspended: true, 
+    Code: "EQP002",
+    Name: "Equipment Type 2",
+    Desciption: "Description Equipment Type 2",
+    Suspended: true,
   },
   {
     key: 3,
-    Code: "FIN",
-    Name: "Finance",
-    Desciption: "A department that manage finance",
+    Code: "EQP003",
+    Name: "Equipment Type 3",
+    Desciption: "Description Equipment Type 3",
     Suspended: false,
-  }
+  },
 ];
 
 const Page = () => {
@@ -83,11 +83,11 @@ const Page = () => {
     <>
       <div className="flex justify-between items-center px-2 pb-4">
         <HeaderTitle
-          title="Department"
-          subtitle="All data department"
+          title="Equipment Type"
+          subtitle="All data equipment type"
         />
         <div>
-          <Link href="/master/department/form">
+          <Link href="/master/equipmenttype/form">
             <Button type="primary">+ Add New</Button>
           </Link>
         </div>

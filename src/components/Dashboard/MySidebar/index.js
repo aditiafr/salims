@@ -12,6 +12,7 @@ import {
   TeamOutlined,
   UserOutlined,
   ApartmentOutlined,
+  ToolOutlined,
 } from "@ant-design/icons";
 import { Button, Layout, Menu, theme } from "antd";
 const { Header, Sider, Content, Footer } = Layout;
@@ -39,6 +40,7 @@ const MySidebar = ({ children }) => {
     getItem("Storage Location", "5", <FileOutlined />, "/master/storagelocation"),
     getItem("Vendor", "6", <FileOutlined />, "/master/vendor"),
     getItem("Department", "7", <ApartmentOutlined />, "/master/department"),
+    getItem("Equipment Type", "8", <ToolOutlined />, "/master/equipmenttype"),
     // getItem("User", "sub1", <UserOutlined />, null, [
     //   getItem("Tom", "3", null, "/user/tom"),
     //   getItem("Bill", "4", null, "/user/bill"),

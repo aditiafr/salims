@@ -1,11 +1,16 @@
-"use client";
-
-import { Form, Input, Col, Row } from "antd";
-import ButtonSubmit from "@/components/Dashboard/Global/Button/ButtonSubmit";
+import ButtonEdit from "@/components/Dashboard/Global/Button/ButtonEdit";
 import HeaderTitle from "@/components/Dashboard/Global/HeaderTitle";
-import Checkbox from "antd/es/checkbox/Checkbox";
+import { EditFilled } from "@ant-design/icons";
+import { Button, Col, Form, Input, Modal, Row, Tooltip, Checkbox } from "antd";
+import React, { useState } from "react";
 
-const Page = () => {
+const EditEquipmentType = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+
   const [form] = Form.useForm();
 
   const onFinish = (values) => {
@@ -17,17 +22,34 @@ const Page = () => {
 
   const onReset = () => {
     form.resetFields();
+    setIsModalOpen(false);
   };
 
   return (
     <>
-      <div className="flex justify-between items-center px-2 pb-4">
-        <HeaderTitle
-          title="DEPARTMENT"
-          subtitle="form data a department"
-        />
-      </div>
-      <div className="w-full bg-white rounded-lg">
+      <Tooltip title="Edit">
+        <Button icon={<EditFilled />} type="text" onClick={showModal} />
+      </Tooltip>
+
+      <Modal
+        title={
+          <HeaderTitle
+            title="EQUIPMENT TYPE"
+            subtitle="Edit data a equipment type"
+          />
+        }
+        centered
+        open={isModalOpen}
+        closable={false}
+        width={1000}
+        styles={{
+          body: {
+            maxHeight: "70vh",
+            overflow: "auto",
+          },
+        }}
+        footer={false}
+      >
         <Form
           name="basic"
           layout="vertical"
@@ -36,7 +58,7 @@ const Page = () => {
           autoComplete="off"
           form={form}
         >
-          <Row gutter={30} style={{ padding: "28px" }}>
+          <Row gutter={30} style={{ margin: "0px" }}>
             <Col xs={24} sm={12}>
               <Form.Item
                 label="Code"
@@ -50,7 +72,7 @@ const Page = () => {
               >
                 <Input maxLength={20} />
               </Form.Item>
-
+              
               <Form.Item
                 label="Name"
                 name="Name"
@@ -75,11 +97,11 @@ const Page = () => {
               </Form.Item>
             </Col>
           </Row>
-          <ButtonSubmit onReset={onReset} />
+          <ButtonEdit onReset={onReset} />
         </Form>
-      </div>
+      </Modal>
     </>
   );
 };
 
-export default Page;
+export default EditEquipmentType;

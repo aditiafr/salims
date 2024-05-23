@@ -23,8 +23,8 @@ const Page = () => {
     <>
       <div className="flex justify-between items-center px-2 pb-4">
         <HeaderTitle
-          title="DEPARTMENT"
-          subtitle="form data a department"
+          title="EQUIPMENT TYPE"
+          subtitle="form data a equipemt type"
         />
       </div>
       <div className="w-full bg-white rounded-lg">
