@@ -17,6 +17,7 @@ import {
   ShoppingOutlined,
   ProductOutlined,
   ArrowUpOutlined,
+  SlidersOutlined
 } from "@ant-design/icons";
 import { Button, Layout, Menu, theme } from "antd";
 const { Header, Sider, Content, Footer } = Layout;
@@ -49,6 +50,7 @@ const MySidebar = ({ children }) => {
     getItem("Product Category", "10", <ShoppingOutlined />, "/master/productcategory"),
     getItem("Product Type", "11", <ProductOutlined />, "/master/producttype"),
     getItem("Other Expense", "12", <ArrowUpOutlined />, "/master/otherexpense"),
+    getItem("Parameter Category", "13", <SlidersOutlined />, "/master/parametercategory"),
     // getItem("User", "sub1", <UserOutlined />, null, [
     //   getItem("Tom", "3", null, "/user/tom"),
     //   getItem("Bill", "4", null, "/user/bill"),
