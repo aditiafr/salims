@@ -28,22 +28,16 @@ const columns = [
     dataIndex: "Desciption",
     key: "Desciption",
     width: 200,
-    render: (text) => {
-      return text ? text : "N/A";
-    },
+    render: (text) => (text ?? "N/A"),
   },
   {
     title: "Suspended",
     dataIndex: "Suspended",
     key: "Suspended",
     width: 100,
-    render: (text) => {
-      return text ? (
-        <span className="bg-red-500 text-white rounded-full px-3 py-1">Yes</span>
-      ) : (
-        <span className="bg-green-500 text-white rounded-full px-3 py-1">No</span>
-      );
-    },
+    render: (suspended) => (
+      <Tag color={suspended ? 'red' : 'green' }> {suspended ? 'Yes' : 'No'} </Tag>
+    ),
   },
   {
     title: "Action",
