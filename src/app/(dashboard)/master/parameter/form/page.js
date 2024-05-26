@@ -90,7 +90,7 @@ const Page = () => {
                 rules={[
                   {
                     required: true,
-                    message: "Please input your Category!",
+                    message: "Please select Category!",
                   },
                 ]}
               >
