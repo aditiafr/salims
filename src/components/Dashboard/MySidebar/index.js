@@ -54,6 +54,7 @@ const MySidebar = ({ children }) => {
     getItem("Parameter Category", "13", <SlidersOutlined />, "/master/parametercategory"),
     getItem("Parameter", "14", <ControlOutlined />, "/master/parameter"),
     getItem("Equipment", "15", <ToolOutlined />, "/master/equipment"),
+    getItem("Labour", "16", <UserOutlined />, "/master/labour"),
     // getItem("User", "sub1", <UserOutlined />, null, [
     //   getItem("Tom", "3", null, "/user/tom"),
     //   getItem("Bill", "4", null, "/user/bill"),
