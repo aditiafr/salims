@@ -1,6 +1,6 @@
 "use client";
 
-import { Form, Input, Col, Row } from "antd";
+import { Form, Input, Col, Row, InputNumber, TimePicker } from "antd";
 import ButtonSubmit from "@/components/Dashboard/Global/Button/ButtonSubmit";
 import HeaderTitle from "@/components/Dashboard/Global/HeaderTitle";
 
@@ -21,10 +21,7 @@ const Page = () => {
   return (
     <>
       <div className="flex justify-between items-center px-2 pb-4">
-        <HeaderTitle
-          title="STORAGE LOCATION"
-          subtitle="form data a storage location"
-        />
+        <HeaderTitle title="TIME POINT" subtitle="form data a time point" />
       </div>
       <div className="w-full bg-white rounded-lg">
         <Form
@@ -36,21 +33,6 @@ const Page = () => {
           form={form}
         >
           <Row gutter={30} style={{ padding: "28px" }}>
-            <Col xs={24} sm={12}>
-              <Form.Item
-                label="Warehouse"
-                name="Warehouse"
-                rules={[
-                  {
-                    required: true,
-                    message: "Please input your Warehouse!",
-                  },
-                ]}
-              >
-                <Input maxLength={20} />
-              </Form.Item>
-            </Col>
-            
             <Col xs={24} sm={12}>
               <Form.Item
                 label="Code"
@@ -78,6 +60,55 @@ const Page = () => {
                 ]}
               >
                 <Input />
+              </Form.Item>
+            </Col>
+
+            <Col xs={24} sm={12}>
+              <Form.Item
+                label="Interval"
+                name="Interval"
+                rules={[
+                  {
+                    required: true,
+                    message: "Please input your Interval!",
+                  },
+                ]}
+              >
+                <div className="flex justify-around border p-2 rounded-md">
+                  <Form.Item
+                    label="Month"
+                    name="Month"
+                    rules={[
+                      {
+                        required: true,
+                      },
+                    ]}
+                  >
+                    <InputNumber />
+                  </Form.Item>
+                  <Form.Item
+                    label="Day"
+                    name="Day"
+                    rules={[
+                        {
+                            required: true,
+                        },
+                    ]}
+                  >
+                    <InputNumber />
+                  </Form.Item>
+                  <Form.Item
+                    label="Time"
+                    name="Time"
+                    rules={[
+                      {
+                        required: true,
+                      },
+                    ]}
+                  >
+                    <TimePicker />
+                  </Form.Item>
+                </div>
               </Form.Item>
             </Col>
 

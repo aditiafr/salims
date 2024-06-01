@@ -1,13 +1,17 @@
-import Link from 'next/link'
-import React from 'react'
+import Link from "next/link";
+import "@/app/globals.css";
 
-const Login = () => {
-    return (
-        <>
-        <Link href="/dashboard" className="hover:underline hover:bg-indigo-500 rounded-md hover:text-white">Login to Dashboard</Link>
-        <Link href="/home" className="hover:underline hover:bg-indigo-500 rounded-md hover:text-white">Go to Home</Link>
-        </>
-    )
-}
+const LoginForm = () => {
+  return (
+    <div className="w-full h-screen flex flex-col justify-center items-center">
+      <Link
+        href="/dashboard"
+        className="hover:underline hover:bg-indigo-500 rounded-md hover:text-white"
+      >
+        LoginForm to Dashboard
+      </Link>
+    </div>
+  );
+};
 
-export default Login
+export default LoginForm;

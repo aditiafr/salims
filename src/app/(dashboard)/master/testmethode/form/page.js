@@ -1,16 +1,10 @@
-import ButtonEdit from "@/components/Dashboard/Global/Button/ButtonEdit";
+"use client";
+
+import { Form, Input, Col, Row } from "antd";
+import ButtonSubmit from "@/components/Dashboard/Global/Button/ButtonSubmit";
 import HeaderTitle from "@/components/Dashboard/Global/HeaderTitle";
-import { EditFilled } from "@ant-design/icons";
-import { Button, Col, Form, Input, Modal, Row, Tooltip } from "antd";
-import React, { useState } from "react";
 
-const EditStorageLocation = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const showModal = () => {
-    setIsModalOpen(true);
-  };
-
+const Page = () => {
   const [form] = Form.useForm();
 
   const onFinish = (values) => {
@@ -22,34 +16,17 @@ const EditStorageLocation = () => {
 
   const onReset = () => {
     form.resetFields();
-    setIsModalOpen(false);
   };
 
   return (
     <>
-      <Tooltip title="Edit">
-        <Button icon={<EditFilled />} type="text" onClick={showModal} />
-      </Tooltip>
-
-      <Modal
-        title={
-          <HeaderTitle
-            title="STORAGE LOCATION"
-            subtitle="Edit data a storage location"
-          />
-        }
-        centered
-        open={isModalOpen}
-        closable={false}
-        width={1000}
-        styles={{
-          body: {
-            maxHeight: "70vh",
-            overflow: "auto",
-          },
-        }}
-        footer={false}
-      >
+      <div className="flex justify-between items-center px-2 pb-4">
+        <HeaderTitle
+          title="TEST METHODE"
+          subtitle="form data a test methode"
+        />
+      </div>
+      <div className="w-full bg-white rounded-lg">
         <Form
           name="basic"
           layout="vertical"
@@ -58,15 +35,15 @@ const EditStorageLocation = () => {
           autoComplete="off"
           form={form}
         >
-          <Row gutter={30} style={{ margin: "0px", paddingTop:"14px" }}>
+          <Row gutter={30} style={{ padding: "28px" }}>
             <Col xs={24} sm={12}>
               <Form.Item
-                label="Warehouse"
-                name="Warehouse"
+                label="MethodeId"
+                name="MethodeId"
                 rules={[
                   {
                     required: true,
-                    message: "Please input your Warehouse!",
+                    message: "Please input your MethodeId!",
                   },
                 ]}
               >
@@ -76,12 +53,12 @@ const EditStorageLocation = () => {
 
             <Col xs={24} sm={12}>
               <Form.Item
-                label="Code"
-                name="Code"
+                label="Preservation"
+                name="Preservation"
                 rules={[
                   {
                     required: true,
-                    message: "Please input your Code!",
+                    message: "Please input your Preservation!",
                   },
                 ]}
               >
@@ -91,12 +68,12 @@ const EditStorageLocation = () => {
 
             <Col xs={24} sm={12}>
               <Form.Item
-                label="Name"
-                name="Name"
+                label="Storag Time Limit"
+                name="StorageTimeLimit"
                 rules={[
                   {
                     required: true,
-                    message: "Please input your Name!",
+                    message: "Please input your Storage Time Limit!",
                   },
                 ]}
               >
@@ -110,11 +87,11 @@ const EditStorageLocation = () => {
               </Form.Item>
             </Col>
           </Row>
-          <ButtonEdit onReset={onReset} />
+          <ButtonSubmit onReset={onReset} />
         </Form>
-      </Modal>
+      </div>
     </>
   );
 };
 
-export default EditStorageLocation;
+export default Page;

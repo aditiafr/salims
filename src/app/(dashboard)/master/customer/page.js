@@ -4,8 +4,8 @@ import { Button, Input, Space, Table, Tag } from "antd";
 import Link from "next/link";
 import React, { Suspense } from "react";
 import HeaderTitle from "@/components/Dashboard/Global/HeaderTitle";
-import EditStorageLocation from "./action/edit";
-import DeleteStorageLocation from "./action/delete";
+import EditCustomer from "./action/edit";
+import DeleteCustomer from "./action/delete";
 const { Search } = Input;
 
 const onSearch = (value, _e, info) => console.log(info?.source, value);
@@ -18,12 +18,6 @@ const columns = [
     width: 80,
   },
   {
-    title: "Warehouse",
-    dataIndex: "Warehouse",
-    key: "Warehouse",
-    width: 150,
-  },
-  {
     title: "Code",
     dataIndex: "Code",
     key: "Code",
@@ -33,6 +27,48 @@ const columns = [
     title: "Name",
     dataIndex: "Name",
     key: "Name",
+    width: 150,
+  },
+  {
+    title: "Address",
+    dataIndex: "Address",
+    key: "Address",
+    width: 150,
+  },
+  {
+    title: "ZIPCode",
+    dataIndex: "ZIPCode",
+    key: "ZIPCode",
+    width: 150,
+  },
+  {
+    title: "City",
+    dataIndex: "City",
+    key: "City",
+    width: 150,
+  },
+  {
+    title: "Country",
+    dataIndex: "Country",
+    key: "Country",
+    width: 150,
+  },
+  {
+    title: "Phone",
+    dataIndex: "Phone",
+    key: "Phone",
+    width: 150,
+  },
+  {
+    title: "Contact",
+    dataIndex: "Contact",
+    key: "Contact",
+    width: 150,
+  },
+  {
+    title: "Email",
+    dataIndex: "Email",
+    key: "Email",
     width: 150,
   },
   {
@@ -56,8 +92,8 @@ const columns = [
     width: 100,
     render: (_, record) => (
       <Space>
-        <EditStorageLocation />
-        <DeleteStorageLocation />
+        <EditCustomer />
+        <DeleteCustomer />
       </Space>
     ),
   },
@@ -65,11 +101,31 @@ const columns = [
 const data = [
   {
     key: "1",
-    Warehouse: "WH01",
-    Code: "001",
-    Name: "Sudirman",
-    Desciption: "Test Data",
-    Suspense: false,
+    Code: "PK01",
+    Name: "PT.Antam Priemere",
+    Address: "Jl. Jendral Sudirman",
+    ZIPCode: "ZIP001",
+    City: "Jakarta Pusat",
+    Country: "Indonesia",
+    Phone: "0812398162",
+    Contact: "Ahmad",
+    Email: "ahmad@gmail.com",
+    Desciption: "Data 1",
+    Suspended: false,
+  },
+  {
+    key: "2",
+    Code: "PK02",
+    Name: "PT.Antam Priemere",
+    Address: "Jl. Jendral Sudirman",
+    ZIPCode: "ZIP002",
+    City: "Jakarta Pusat",
+    Country: "Indonesia",
+    Phone: "0822398262",
+    Contact: "Ahmad",
+    Email: "ahmad@gmail.com",
+    Desciption: "Data 2",
+    Suspended: true,
   },
 ];
 
@@ -78,11 +134,11 @@ const Page = () => {
     <>
       <div className="flex justify-between items-center px-2 pb-4">
         <HeaderTitle
-          title="STORAGE LOCATION"
-          subtitle="All data storage location"
+          title="CUSTOMER"
+          subtitle="All data customer"
         />
         <div>
-          <Link href="/master/storagelocation/form">
+          <Link href="/master/customer/form">
             <Button type="primary">+ Add New</Button>
           </Link>
         </div>

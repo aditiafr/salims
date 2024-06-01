@@ -4,7 +4,7 @@ import { EditFilled } from "@ant-design/icons";
 import { Button, Col, Form, Input, Modal, Row, Tooltip } from "antd";
 import React, { useState } from "react";
 
-const EditStorageLocation = () => {
+const EditTestMethode = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const showModal = () => {
@@ -34,8 +34,8 @@ const EditStorageLocation = () => {
       <Modal
         title={
           <HeaderTitle
-            title="STORAGE LOCATION"
-            subtitle="Edit data a storage location"
+            title="TEST METHODE"
+            subtitle="Edit data a test methode"
           />
         }
         centered
@@ -58,15 +58,15 @@ const EditStorageLocation = () => {
           autoComplete="off"
           form={form}
         >
-          <Row gutter={30} style={{ margin: "0px", paddingTop:"14px" }}>
+          <Row gutter={30} style={{ margin: "0px", paddingTop: "14px" }}>
             <Col xs={24} sm={12}>
               <Form.Item
-                label="Warehouse"
-                name="Warehouse"
+                label="MethodeId"
+                name="MethodeId"
                 rules={[
                   {
                     required: true,
-                    message: "Please input your Warehouse!",
+                    message: "Please input your MethodeId!",
                   },
                 ]}
               >
@@ -76,12 +76,12 @@ const EditStorageLocation = () => {
 
             <Col xs={24} sm={12}>
               <Form.Item
-                label="Code"
-                name="Code"
+                label="Preservation"
+                name="Preservation"
                 rules={[
                   {
                     required: true,
-                    message: "Please input your Code!",
+                    message: "Please input your Preservation!",
                   },
                 ]}
               >
@@ -91,12 +91,12 @@ const EditStorageLocation = () => {
 
             <Col xs={24} sm={12}>
               <Form.Item
-                label="Name"
-                name="Name"
+                label="Storag Time Limit"
+                name="StorageTimeLimit"
                 rules={[
                   {
                     required: true,
-                    message: "Please input your Name!",
+                    message: "Please input your Storage Time Limit!",
                   },
                 ]}
               >
@@ -117,4 +117,4 @@ const EditStorageLocation = () => {
   );
 };
 
-export default EditStorageLocation;
+export default EditTestMethode;

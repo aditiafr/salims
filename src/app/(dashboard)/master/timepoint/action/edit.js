@@ -1,10 +1,10 @@
 import ButtonEdit from "@/components/Dashboard/Global/Button/ButtonEdit";
 import HeaderTitle from "@/components/Dashboard/Global/HeaderTitle";
 import { EditFilled } from "@ant-design/icons";
-import { Button, Col, Form, Input, Modal, Row, Tooltip } from "antd";
+import { Button, Col, Form, Input, InputNumber, Modal, Row, TimePicker, Tooltip } from "antd";
 import React, { useState } from "react";
 
-const EditStorageLocation = () => {
+const EditTimePoint = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const showModal = () => {
@@ -34,8 +34,8 @@ const EditStorageLocation = () => {
       <Modal
         title={
           <HeaderTitle
-            title="STORAGE LOCATION"
-            subtitle="Edit data a storage location"
+            title="TIME POINT"
+            subtitle="Edit data a time point"
           />
         }
         centered
@@ -58,22 +58,7 @@ const EditStorageLocation = () => {
           autoComplete="off"
           form={form}
         >
-          <Row gutter={30} style={{ margin: "0px", paddingTop:"14px" }}>
-            <Col xs={24} sm={12}>
-              <Form.Item
-                label="Warehouse"
-                name="Warehouse"
-                rules={[
-                  {
-                    required: true,
-                    message: "Please input your Warehouse!",
-                  },
-                ]}
-              >
-                <Input maxLength={20} />
-              </Form.Item>
-            </Col>
-
+          <Row gutter={30} style={{ margin: "0px", paddingTop: "14px" }}>
             <Col xs={24} sm={12}>
               <Form.Item
                 label="Code"
@@ -105,6 +90,55 @@ const EditStorageLocation = () => {
             </Col>
 
             <Col xs={24} sm={12}>
+              <Form.Item
+                label="Interval"
+                name="Interval"
+                rules={[
+                  {
+                    required: true,
+                    message: "Please input your Interval!",
+                  },
+                ]}
+              >
+                <div className="flex justify-around border p-2 rounded-md">
+                  <Form.Item
+                    label="Month"
+                    name="Month"
+                    rules={[
+                      {
+                        required: true,
+                      },
+                    ]}
+                  >
+                    <InputNumber />
+                  </Form.Item>
+                  <Form.Item
+                    label="Day"
+                    name="Day"
+                    rules={[
+                      {
+                        required: true,
+                      },
+                    ]}
+                  >
+                    <InputNumber />
+                  </Form.Item>
+                  <Form.Item
+                    label="Time"
+                    name="Time"
+                    rules={[
+                      {
+                        required: true,
+                      },
+                    ]}
+                  >
+                    <TimePicker />
+                  </Form.Item>
+                </div>
+              </Form.Item>
+            </Col>
+
+            <Col xs={24} sm={12}>
               <Form.Item label="Description" name="Description">
                 <Input.TextArea />
               </Form.Item>
@@ -117,4 +151,4 @@ const EditStorageLocation = () => {
   );
 };
 
-export default EditStorageLocation;
+export default EditTimePoint;

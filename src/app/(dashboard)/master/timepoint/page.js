@@ -4,8 +4,9 @@ import { Button, Input, Space, Table, Tag } from "antd";
 import Link from "next/link";
 import React, { Suspense } from "react";
 import HeaderTitle from "@/components/Dashboard/Global/HeaderTitle";
-import EditStorageLocation from "./action/edit";
-import DeleteStorageLocation from "./action/delete";
+import EditTimePoint from "./action/edit";
+import DeleteTimePoint from "./action/delete";
+
 const { Search } = Input;
 
 const onSearch = (value, _e, info) => console.log(info?.source, value);
@@ -18,12 +19,6 @@ const columns = [
     width: 80,
   },
   {
-    title: "Warehouse",
-    dataIndex: "Warehouse",
-    key: "Warehouse",
-    width: 150,
-  },
-  {
     title: "Code",
     dataIndex: "Code",
     key: "Code",
@@ -33,6 +28,12 @@ const columns = [
     title: "Name",
     dataIndex: "Name",
     key: "Name",
+    width: 150,
+  },
+  {
+    title: "Interval",
+    dataIndex: "Interval",
+    key: "Interval",
     width: 150,
   },
   {
@@ -56,8 +57,8 @@ const columns = [
     width: 100,
     render: (_, record) => (
       <Space>
-        <EditStorageLocation />
-        <DeleteStorageLocation />
+        <EditTimePoint />
+        <DeleteTimePoint />
       </Space>
     ),
   },
@@ -65,9 +66,9 @@ const columns = [
 const data = [
   {
     key: "1",
-    Warehouse: "WH01",
     Code: "001",
     Name: "Sudirman",
+    Interval: "03/14/02:00",
     Desciption: "Test Data",
     Suspense: false,
   },
@@ -78,11 +79,11 @@ const Page = () => {
     <>
       <div className="flex justify-between items-center px-2 pb-4">
         <HeaderTitle
-          title="STORAGE LOCATION"
-          subtitle="All data storage location"
+          title="TIME POINT"
+          subtitle="All data time point"
         />
         <div>
-          <Link href="/master/storagelocation/form">
+          <Link href="/master/timepoint/form">
             <Button type="primary">+ Add New</Button>
           </Link>
         </div>

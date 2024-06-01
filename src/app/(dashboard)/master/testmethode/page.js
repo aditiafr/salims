@@ -2,10 +2,10 @@
 
 import { Button, Input, Space, Table, Tag } from "antd";
 import Link from "next/link";
-import React, { Suspense } from "react";
+import React from "react";
 import HeaderTitle from "@/components/Dashboard/Global/HeaderTitle";
-import EditStorageLocation from "./action/edit";
-import DeleteStorageLocation from "./action/delete";
+import EditTestMethode from "./action/edit";
+import DeleteTestMethode from "./action/delete";
 const { Search } = Input;
 
 const onSearch = (value, _e, info) => console.log(info?.source, value);
@@ -18,21 +18,21 @@ const columns = [
     width: 80,
   },
   {
-    title: "Warehouse",
-    dataIndex: "Warehouse",
-    key: "Warehouse",
+    title: "MethodeId",
+    dataIndex: "MethodeId",
+    key: "MethodeId",
     width: 150,
   },
   {
-    title: "Code",
-    dataIndex: "Code",
-    key: "Code",
+    title: "Preservation",
+    dataIndex: "Preservation",
+    key: "Preservation",
     width: 150,
   },
   {
-    title: "Name",
-    dataIndex: "Name",
-    key: "Name",
+    title: "StorageTimeLimit",
+    dataIndex: "StorageTimeLimit",
+    key: "StorageTimeLimit",
     width: 150,
   },
   {
@@ -56,8 +56,8 @@ const columns = [
     width: 100,
     render: (_, record) => (
       <Space>
-        <EditStorageLocation />
-        <DeleteStorageLocation />
+        <EditTestMethode />
+        <DeleteTestMethode />
       </Space>
     ),
   },
@@ -65,11 +65,11 @@ const columns = [
 const data = [
   {
     key: "1",
-    Warehouse: "WH01",
-    Code: "001",
-    Name: "Sudirman",
+    MethodeId: "WH01",
+    Preservation: "001",
+    StorageTimeLimit: "123",
     Desciption: "Test Data",
-    Suspense: false,
+    Suspend: false,
   },
 ];
 
@@ -77,12 +77,9 @@ const Page = () => {
   return (
     <>
       <div className="flex justify-between items-center px-2 pb-4">
-        <HeaderTitle
-          title="STORAGE LOCATION"
-          subtitle="All data storage location"
-        />
+        <HeaderTitle title="TEST METHODE" subtitle="All data test methode" />
         <div>
-          <Link href="/master/storagelocation/form">
+          <Link href="/master/testmethode/form">
             <Button type="primary">+ Add New</Button>
           </Link>
         </div>
