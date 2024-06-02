@@ -17,19 +17,19 @@ const columns = [
     title: "Branch",
     dataIndex: "Branch",
     key: "Branch",
-    width: 80,
+    width: 100,
   },
   {
     title: "Version",
     dataIndex: "Version",
     key: "Version",
-    width: 80,
+    width: 100,
   },
   {
     title: "Equipment Type",
     dataIndex: "EquipmentType",
     key: "EquipmentType",
-    width: 100,
+    width: 150,
   },
   {
     title: "Vendor",
@@ -41,7 +41,7 @@ const columns = [
     title: "Manufacture",
     dataIndex: "Manufacture",
     key: "Manufacture",
-    width: 110,
+    width: 120,
   },
   {
     title: "Code",
@@ -59,21 +59,21 @@ const columns = [
     title: "Serial Number",
     dataIndex: "SerialNumber",
     key: "SerialNumber",
-    width: 100,
+    width: 140,
     render: (text) => (text ?? "N/A"),
   },
   {
     title: "Calibration Date",
     dataIndex: "CalibrationDate",
     key: "CalibrationDate",
-    width: 100,
+    width: 150,
     render: (text) => (text ?? "N/A"),
   },
   {
     title: "Calibration Due Date",
     dataIndex: "CalibrationDueDate",
     key: "CalibrationDueDate",
-    width: 100,
+    width: 200,
     render: (text) => (text ?? "N/A"),
   },
   {
@@ -105,7 +105,7 @@ const columns = [
     title: "Suspended",
     dataIndex: "Suspended",
     key: "Suspended",
-    width: 100,
+    width: 110,
     render: (suspended) => (
        <Tag color={suspended ? 'red' : 'green' }> {suspended ? 'Yes' : 'No'} </Tag>
     ),
@@ -172,7 +172,7 @@ const data = [
     Temp: "20",
     Description: "DAD Array UV Detector",
     IsQCTool: true,
-    Suspended: false,
+    Suspended: true,
   },
   {
     key: 4,

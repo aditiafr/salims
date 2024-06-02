@@ -1,6 +1,6 @@
 "use client";
 
-import { Button, Input, Space, Table } from "antd";
+import { Button, Input, Space, Table, Tag } from "antd";
 import Link from "next/link";
 import React from "react";
 import HeaderTitle from "@/components/Dashboard/Global/HeaderTitle";
