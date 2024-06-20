@@ -25,6 +25,7 @@ import {
   ReconciliationOutlined,
   FieldTimeOutlined,
   DropboxOutlined,
+  CalculatorOutlined,
 } from "@ant-design/icons";
 import { Button, Layout, Menu, theme } from "antd";
 const { Header, Sider, Content, Footer } = Layout;
@@ -66,6 +67,8 @@ const MySidebar = ({ children }) => {
     getItem("Parameter", "18", <ControlOutlined />, "/master/parameter"),
     getItem("Equipment", "19", <ToolOutlined />, "/master/equipment"),
     getItem("Labour", "20", <UserOutlined />, "/master/labour"),
+    getItem("Formula", "21", <CalculatorOutlined />, "/master/formula"),
+    getItem("Formula Table Reference", "22", <CalculatorOutlined />, "/master/formulatableref"),
     // getItem("User", "sub1", <UserOutlined />, null, [
     //   getItem("Tom", "3", null, "/user/tom"),
     //   getItem("Bill", "4", null, "/user/bill"),
